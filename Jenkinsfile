@@ -6,6 +6,7 @@ pipeline {
               sh 'rm -rf build'
               sh 'mkdir build'
               sh 'cd build && cmake ..'
+              sh 'cd ..'
             }
         }
         stage('Test') {
