@@ -4,13 +4,12 @@ pipeline {
         stage('Build') {
             steps {
               sh 'rm -rf build'
-              sh 'mkdir build'
-              sh 'cd build && cmake ..'
+              sh 'cmake -B build -S .'
+              sh 'cmake --build build'
             }
         }
         stage('Test') {
             steps {
-                sh 'cd ..'
                 sh './build/casino_game'
                 sh './build/test_game'
             }
