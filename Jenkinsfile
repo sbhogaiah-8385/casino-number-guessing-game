@@ -6,11 +6,11 @@ pipeline {
               sh 'rm -rf build'
               sh 'mkdir build'
               sh 'cd build && cmake ..'
-              sh 'cd ..'
             }
         }
         stage('Test') {
             steps {
+                sh 'cd ..'
                 sh './build/casino_game'
                 sh './build/test_game'
             }
