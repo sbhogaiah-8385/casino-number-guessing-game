@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'rm -rf build'
+                sh 'cmake -G "MinGW Makefiles" .'
                 sh 'cmake -B build -S .'
                 sh 'cmake --build build'
             }
